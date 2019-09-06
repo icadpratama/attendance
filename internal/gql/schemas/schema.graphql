@@ -1,8 +1,8 @@
 # Types
 type User {
-  id: ID
-  email: String
-  userId: String
+  id: ID!
+  email: String!
+  userId: String!
 }
 
 # Input Types
@@ -20,5 +20,5 @@ type Mutation {
 
 # Define queries here
 type Query {
-  users(userId: ID): [User]
+  users(userId: ID): [User!]!
 }

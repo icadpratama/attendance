@@ -22,8 +22,8 @@ func (r *queryResolver) Users(ctx context.Context, userID *string) ([]*models.Us
 	records := []*models.User{
 		&models.User{
 			ID:     "ec17af15-e354-440c-a09f-69715fc8b595",
-			Email:  "your@email.com",
-			UserID: "UserID-1",
+			Email:  "irsyadjpratamap@gmail.com",
+			UserID: "irsyadjpratamap",
 		},
 	}
 	return records, nil
