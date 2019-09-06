@@ -2,9 +2,12 @@ package resolvers
 
 import (
 	"github.com/icadpratama/attendance/internal/gql"
+	"github.com/icadpratama/attendance/internal/orm"
 )
 
-type Resolver struct{}
+type Resolver struct{
+	ORM *orm.ORM
+}
 
 func (r *Resolver) Mutation() gql.MutationResolver {
 	return &mutationResolver{r}

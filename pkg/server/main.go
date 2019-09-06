@@ -1,8 +1,8 @@
 package server
 
 import (
-	"log"
-
+	log "github.com/icadpratama/attendance/internal/logger"
+	"github.com/icadpratama/attendance/internal/orm"
 	"github.com/gin-gonic/gin"
 	"github.com/icadpratama/attendance/internal/handlers"
 	"github.com/icadpratama/attendance/pkg/utils"
@@ -19,7 +19,9 @@ func init() {
 	isPgEnabled = utils.MustGetBool("GQL_SERVER_GRAPHQL_PLAYGROUND_ENABLED")
 }
 
-func Run() {
+func Run(orm *orm.ORM) {
+	log.Info("GORM_CONNECTION_DSN: ", utils.MustGet("GORM_CONNECTION_DSN"))
+
 	endpoint := "http://" + host + ":" + port
 
 	r := gin.Default()
@@ -28,11 +30,12 @@ func Run() {
 
 	if isPgEnabled {
 		r.GET(gqlPgPath, handlers.PlaygroundHandler(gqlPath))
-		log.Println("GraphQL Playground @ " + endpoint + gqlPgPath)
+		log.Info("GraphQL Playground @ " + endpoint + gqlPgPath)
 	}
-	r.POST(gqlPath, handlers.GraphqlHandler())
-	log.Println("GraphQL @ " + endpoint + gqlPath)
 
-	log.Println("Running @ " + endpoint)
-	log.Fatalln(r.Run(host + ":" + port))
+	r.POST(gqlPath, handlers.GraphqlHandler(orm))
+	log.Info("GraphQL @ " + endpoint + gqlPath)
+
+	log.Info("Running @ " + endpoint)
+	log.Fatal(r.Run(host + ":" + port))
 }
