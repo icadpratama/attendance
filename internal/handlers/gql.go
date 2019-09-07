@@ -4,8 +4,8 @@ import (
 	"github.com/99designs/gqlgen/handler"
 	"github.com/gin-gonic/gin"
 	"github.com/icadpratama/attendance/internal/gql"
-	"github.com/icadpratama/attendance/internal/orm"
 	"github.com/icadpratama/attendance/internal/gql/resolvers"
+	"github.com/icadpratama/attendance/internal/orm"
 )
 
 func GraphqlHandler(orm *orm.ORM) gin.HandlerFunc {

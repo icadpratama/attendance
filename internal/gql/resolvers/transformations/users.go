@@ -3,9 +3,9 @@ package transformations
 import (
 	"errors"
 
+	"github.com/gofrs/uuid"
 	gql "github.com/icadpratama/attendance/internal/gql/models"
 	dbm "github.com/icadpratama/attendance/internal/orm/models"
-	"github.com/gofrs/uuid"
 )
 
 func DBUserToGQLUser(i *dbm.User) (o *gql.User, err error) {
@@ -36,7 +36,7 @@ func GQLInputUserToDBUser(i *gql.UserInput, update bool, ids ...string) (o *dbm.
 		Location:    i.Location,
 	}
 	if i.Email == nil && !update {
-		return nil, errors.New("Field [email] is required")
+		return nil, errors.New("field [email] is required")
 	}
 	if i.Email != nil {
 		o.Email = *i.Email

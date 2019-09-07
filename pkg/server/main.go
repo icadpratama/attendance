@@ -1,10 +1,10 @@
 package server
 
 import (
-	log "github.com/icadpratama/attendance/internal/logger"
-	"github.com/icadpratama/attendance/internal/orm"
 	"github.com/gin-gonic/gin"
 	"github.com/icadpratama/attendance/internal/handlers"
+	log "github.com/icadpratama/attendance/internal/logger"
+	"github.com/icadpratama/attendance/internal/orm"
 	"github.com/icadpratama/attendance/pkg/utils"
 )
 

@@ -5,7 +5,7 @@ import (
 
 	log "github.com/icadpratama/attendance/internal/logger"
 
-	"github.com/icadpratama/attendance/internal/orm/migrations/jobs"
+	. "github.com/icadpratama/attendance/internal/orm/migrations/jobs"
 	"github.com/icadpratama/attendance/internal/orm/models"
 	"github.com/jinzhu/gorm"
 	"gopkg.in/gormigrate.v1"
@@ -32,13 +32,14 @@ func ServiceAutoMigration(db *gorm.DB) error {
 
 		return nil
 	})
-	m.Migrate()
+
+	_ = m.Migrate()
 
 	if err := updateMigration(db); err != nil {
 		return err
 	}
 	m = gormigrate.New(db, gormigrate.DefaultOptions, []*gormigrate.Migration{
-		jobs.SeedUsers,
+		SeedUsers,
 	})
 	return m.Migrate()
 }
