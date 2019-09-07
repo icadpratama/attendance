@@ -33,6 +33,6 @@ require (
 	golang.org/x/text v0.3.2 // indirect
 	golang.org/x/tools v0.0.0-20190906185503-8159a2d3d69b // indirect
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
-	gopkg.in/gormigrate.v1 v1.6.0 // indirect
+	gopkg.in/gormigrate.v1 v1.6.0
 	gopkg.in/urfave/cli.v2 v2.0.0-20190806201727-b62605953717 // indirect
 )
