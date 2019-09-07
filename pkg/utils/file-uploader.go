@@ -1,15 +1,14 @@
 package utils
 
 import (
-	"github.com/minio/minio-go/v6"
 	log "github.com/icadpratama/attendance/internal/logger"
-	"github.com/icadpratama/attendance/pkg/utils"
+	"github.com/minio/minio-go/v6"
 )
 
 func upload() {
-	endpoint := utils.MustGet("MINIO_ENDPOINT")
-	accessKeyID := utils.MustGet("MINIO_ACCESS_KEY")
-	secretAccessKey := utils.MustGet("MINIO_SECRET_KEY")
+	endpoint := MustGet("MINIO_ENDPOINT")
+	accessKeyID := MustGet("MINIO_ACCESS_KEY")
+	secretAccessKey := MustGet("MINIO_SECRET_KEY")
 	useSSL := true
 
 	// Initialize minio client object.
@@ -41,7 +40,7 @@ func upload() {
 	contentType := "application/zip"
 
 	// Upload the zip file with FPutObject
-	n, err := minioClient.FPutObject(bucketName, objectName, filePath, minio.PutObjectOptions{ContentType:contentType})
+	n, err := minioClient.FPutObject(bucketName, objectName, filePath, minio.PutObjectOptions{ContentType: contentType})
 	if err != nil {
 		log.Fatal(err)
 	}

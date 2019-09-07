@@ -7,4 +7,5 @@ type ItemRequest struct {
 	item     *string
 	quantity *int
 	details  *string
+	document string
 }
