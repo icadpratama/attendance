@@ -5,7 +5,7 @@ import (
 
 	log "github.com/icadpratama/attendance/internal/logger"
 
-	"github.com/icadpratama/attendance/internal/orm/migration/jobs"
+	"github.com/icadpratama/attendance/internal/orm/migrations/jobs"
 	"github.com/icadpratama/attendance/internal/orm/models"
 	"github.com/jinzhu/gorm"
 	"gopkg.in/gormigrate.v1"
