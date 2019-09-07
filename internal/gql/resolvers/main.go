@@ -5,6 +5,8 @@ import (
 	"github.com/icadpratama/attendance/internal/orm"
 )
 
+//go:generate go run github.com/99designs/gqlgen
+
 type Resolver struct{
 	ORM *orm.ORM
 }
