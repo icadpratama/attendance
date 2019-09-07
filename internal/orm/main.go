@@ -3,7 +3,7 @@ package orm
 import (
     log "github.com/icadpratama/attendance/internal/logger"
 
-    "github.com/icadpratama/attendance/internal/orm/migration"
+    "github.com/icadpratama/attendance/internal/orm/migrations"
 
     "github.com/icadpratama/attendance/pkg/utils"
     _ "github.com/jinzhu/gorm/dialects/postgres"
@@ -38,7 +38,7 @@ func Factory() (*ORM, error) {
     db.LogMode(logMode)
 
 	if autoMigrate {
-        err = migration.ServiceAutoMigration(orm.DB)
+        err = migrations.ServiceAutoMigration(orm.DB)
     }
 
 	log.Info("[ORM] Database connection initialized.")
