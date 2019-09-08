@@ -190,3 +190,6 @@ modules.xml
 .idea/sonarlint
 
 # End of https://www.gitignore.io/api/go,linux,macos,windows,visualstudiocode,intellij+all
+
+/build
+/build/gql-server
