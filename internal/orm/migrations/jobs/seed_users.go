@@ -7,14 +7,14 @@ import (
 )
 
 var (
-	uname = "Test User"
-	fname = "Test"
-	lname = "User"
-	nname = "Foo Bar"
+	uname = "irsyadjpratamap"
+	fname = "Irsyad Jamal"
+	lname = "Pratama Putra"
+	nname = "Irsyad"
 	description = "This is the first user ever!"
-	location = "His house, maybe?"
+	location = "Palbatu"
 	firstUser   *models.User = &models.User{
-		Email: "test@test.com",
+		Email: "irsyadjpratamap@gmail.com",
 		Name: &uname,
 		FirstName: &fname,
 		LastName: &lname,

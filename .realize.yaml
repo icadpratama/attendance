@@ -1,0 +1,20 @@
+settings:
+  legacy:
+    force: false
+    interval: 0s
+schema:
+- name: attendance
+  path: .
+  args:
+  - run
+  commands: {}
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignore:
+      paths:
+      - .git
+      - .realize
+      - vendor

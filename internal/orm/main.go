@@ -5,7 +5,7 @@ import (
 
     "github.com/icadpratama/attendance/internal/orm/migrations"
 
-    . "github.com/icadpratama/attendance/pkg/utils"
+    "github.com/icadpratama/attendance/pkg/utils"
     _ "github.com/jinzhu/gorm/dialects/postgres"
 
     "github.com/jinzhu/gorm"
@@ -19,11 +19,11 @@ type ORM struct {
 }
 
 func init() {
-    dialect = MustGet("GORM_DIALECT")
-    dsn = MustGet("GORM_CONNECTION_DSN")
-    seedDB = MustGetBool("GORM_SEED_DB")
-    logMode = MustGetBool("GORM_LOGMODE")
-    autoMigrate = MustGetBool("GORM_AUTOMIGRATE")
+    dialect = utils.MustGet("GORM_DIALECT")
+    dsn = utils.MustGet("GORM_CONNECTION_DSN")
+    seedDB = utils.MustGetBool("GORM_SEED_DB")
+    logMode = utils.MustGetBool("GORM_LOGMODE")
+    autoMigrate = utils.MustGetBool("GORM_AUTOMIGRATE")
 }
 
 func Factory() (*ORM, error) {
